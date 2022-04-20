@@ -25,7 +25,7 @@ public class MyApplicationRunner implements ApplicationRunner {
                 new Car(5, "Toyota", "T50", 30000, 2015 )
         );
 
-        //cars.forEach(carRepository::save);
+        //cars.forEach(carRepository::save); // save all cars in the list to the database one by one
         carRepository.saveAll(cars);
 
 
