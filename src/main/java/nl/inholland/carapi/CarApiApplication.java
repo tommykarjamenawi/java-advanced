@@ -1,10 +1,12 @@
 package nl.inholland.carapi;
 
 import nl.inholland.carapi.model.Car;
+import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Scope;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,11 +18,10 @@ public class CarApiApplication {
 	public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.run(CarApiApplication.class, args);
 		Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
-
-
 	}
 
 	@Bean
+	@Scope(scopeName = BeanDefinition.SCOPE_PROTOTYPE)
 	public List<Car> cars() {
 		// returns list of cars
 		return new ArrayList<>((List.of(
