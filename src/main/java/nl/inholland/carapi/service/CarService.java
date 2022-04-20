@@ -1,6 +1,8 @@
 package nl.inholland.carapi.service;
 
 import nl.inholland.carapi.model.Car;
+import nl.inholland.carapi.repository.CarRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -8,6 +10,8 @@ import java.util.List;
 @Service
 public class CarService {
 
+    @Autowired
+    private CarRepository carRepository;
     private List<Car> cars;
 
     public CarService(List<Car> cars) {
