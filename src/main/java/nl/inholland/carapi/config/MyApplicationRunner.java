@@ -19,10 +19,10 @@ public class MyApplicationRunner implements ApplicationRunner {
 
         List<Car> cars = List.of(
                 new Car(1, "Ferrari", "F40", 200000, 1988 ),
-                new Car(1, "Tesla", "S", 80000, 2020 ),
-                new Car(1, "Volvo", "vs34", 40000, 2009 ),
-                new Car(1, "Fiat", "F3", 20000, 2012 ),
-                new Car(1, "Toyota", "T50", 30000, 2015 )
+                new Car(2, "Tesla", "S", 80000, 2020 ),
+                new Car(3, "Volvo", "vs34", 40000, 2009 ),
+                new Car(4, "Fiat", "F3", 20000, 2012 ),
+                new Car(5, "Toyota", "T50", 30000, 2015 )
         );
 
         cars.forEach(carRepository::save);

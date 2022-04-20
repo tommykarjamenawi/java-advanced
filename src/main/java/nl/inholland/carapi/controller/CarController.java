@@ -51,7 +51,7 @@ public class CarController {
 
     // update a car
     @RequestMapping(value = "update", method = RequestMethod.PUT)
-    public ResponseEntity updateLocation(@RequestBody Car car) {
+    public ResponseEntity updateCar(@RequestBody Car car) {
         try {
             return ResponseEntity.status(200).body(carService.updateCarById(car));
         } catch (Exception e) {
@@ -60,7 +60,7 @@ public class CarController {
     }
 
     // delete a car by id
-    @DeleteMapping("delete")
+    @DeleteMapping("delete/{id}")
     public ResponseEntity deleteCar(@PathVariable Long id) {
         try {
             carService.deleteCarById(id);
