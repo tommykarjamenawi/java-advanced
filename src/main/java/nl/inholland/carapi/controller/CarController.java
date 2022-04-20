@@ -60,12 +60,6 @@ public class CarController {
     }
 
     // delete a car by id
-//    @RequestMapping(value = "delete/{id}", method = RequestMethod.DELETE)
-//    public void deleteCar(@PathVariable int id) {
-//        carService.deleteCarById(id);
-//    }
-
-    // delete a car by id
     @DeleteMapping("delete/{id}")
     public ResponseEntity deleteCar(@PathVariable int id) {
         try {
