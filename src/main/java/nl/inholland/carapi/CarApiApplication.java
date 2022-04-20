@@ -17,7 +17,7 @@ public class CarApiApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.run(CarApiApplication.class, args);
-		Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
+		//Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
 	}
 
 	@Bean
