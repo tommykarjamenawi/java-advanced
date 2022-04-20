@@ -39,7 +39,4 @@ public class CarService {
     public Optional<Car> getCarById(long id){
         return carRepository.findById(id);
     }
-
-
-
 }
