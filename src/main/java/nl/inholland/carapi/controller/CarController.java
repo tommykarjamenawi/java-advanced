@@ -50,18 +50,18 @@ public class CarController {
     }
 
     // update a car
-    @RequestMapping(value = "update/{id}", method = RequestMethod.PUT)
-    public ResponseEntity updateLocation(@RequestBody Car car, @PathVariable String id) {
+    @RequestMapping(value = "update", method = RequestMethod.PUT)
+    public ResponseEntity updateLocation(@RequestBody Car car) {
         try {
-            return ResponseEntity.status(200).body(carService.updateCarById(Integer.parseInt(id), car));
+            return ResponseEntity.status(200).body(carService.updateCarById(car));
         } catch (Exception e) {
             return ResponseEntity.internalServerError().body(Collections.singletonMap("Message", e.getMessage()));
         }
     }
 
     // delete a car by id
-    @DeleteMapping("delete/{id}")
-    public ResponseEntity deleteCar(@PathVariable int id) {
+    @DeleteMapping("delete")
+    public ResponseEntity deleteCar(@PathVariable Long id) {
         try {
             carService.deleteCarById(id);
             return ResponseEntity.status(200).body(Collections.singletonMap("Message", "Car deleted"));
