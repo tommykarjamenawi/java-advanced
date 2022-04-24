@@ -23,13 +23,13 @@ public class CarController {
     }
 
     // get all cars
-    @RequestMapping(method = RequestMethod.GET, value = "all")
+    @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity getCars() {
         return ResponseEntity.status(200).body(carService.getAllCars());
     }
 
     // add a car
-    @RequestMapping(method = RequestMethod.POST, value = "add", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity addCar(@RequestBody Car car) {
         try {
             Car newCar = carService.addCar(car);
@@ -50,7 +50,7 @@ public class CarController {
     }
 
     // update a car
-    @RequestMapping(value = "update", method = RequestMethod.PUT)
+    @RequestMapping(method = RequestMethod.PUT)
     public ResponseEntity updateCar(@RequestBody Car car) {
         try {
             return ResponseEntity.status(200).body(carService.updateCarById(car));
