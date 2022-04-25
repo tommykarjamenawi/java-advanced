@@ -40,7 +40,7 @@ public class CarController {
     }
 
     // get a car by id
-    @GetMapping("get/{id}")
+    @GetMapping("{id}")
     public ResponseEntity getCarById(@PathVariable int id) {
         try {
             return ResponseEntity.status(200).body(carService.getCarById(id));
