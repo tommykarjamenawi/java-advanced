@@ -1,14 +1,13 @@
 package nl.inholland.carapi.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Car {
 
     @Id
-    @GeneratedValue
+    @SequenceGenerator(name = "car_seq", initialValue = 1000001)
+    @GeneratedValue(generator = "car_seq", strategy = GenerationType.SEQUENCE)
     private long id;
     private String brand;
     private String model;
