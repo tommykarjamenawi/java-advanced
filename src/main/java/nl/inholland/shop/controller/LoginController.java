@@ -18,7 +18,7 @@ public class LoginController {
 
     @PostMapping
     public LoginResponseDTO login(@RequestBody LoginDTO login) {
-        
+
         LoginResponseDTO responseDTO = new LoginResponseDTO();
         responseDTO.setToken(userService.login(login.getUsername(), login.getPassword()));
         return responseDTO;
