@@ -3,6 +3,7 @@ package nl.inholland.shop.service;
 import nl.inholland.shop.jwt.JwtTokenProvider;
 import nl.inholland.shop.model.Role;
 import nl.inholland.shop.model.User;
+import nl.inholland.shop.model.dto.LoginResponseDTO;
 import nl.inholland.shop.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -41,7 +42,6 @@ public class UserService {
         catch (AuthenticationException ex) {
             throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY, "Username or password is incorrect");
         }
-
         return token;
     }
 

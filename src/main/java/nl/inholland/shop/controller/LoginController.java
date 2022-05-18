@@ -17,11 +17,12 @@ public class LoginController {
     UserService userService;
 
     @PostMapping
-    public String login(@RequestBody LoginDTO login) {
+    public LoginResponseDTO login(@RequestBody LoginDTO login) {
 
+        // TODO: make a responseDTO for returning this in the future
         LoginResponseDTO responseDTO = new LoginResponseDTO();
         responseDTO.setToken(userService.login(login.getUsername(), login.getPassword()));
-        return responseDTO.getToken();
+        return responseDTO;
     }
 
 }
