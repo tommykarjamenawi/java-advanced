@@ -24,7 +24,6 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.web.server.ResponseStatusException;
 
 @Component
-
 public class JwtTokenProvider {
 
     /**

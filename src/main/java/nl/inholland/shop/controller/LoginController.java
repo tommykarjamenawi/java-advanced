@@ -1,6 +1,7 @@
 package nl.inholland.shop.controller;
 
 import nl.inholland.shop.model.dto.LoginDTO;
+import nl.inholland.shop.model.dto.LoginResponseDTO;
 import nl.inholland.shop.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,8 +19,9 @@ public class LoginController {
     @PostMapping
     public String login(@RequestBody LoginDTO login) {
 
-        // TODO: make a DTO for returning this in the future
-        return userService.login(login.getUsername(), login.getPassword());
+        LoginResponseDTO responseDTO = new LoginResponseDTO();
+        responseDTO.setToken(userService.login(login.getUsername(), login.getPassword()));
+        return responseDTO.getToken();
     }
 
 }
