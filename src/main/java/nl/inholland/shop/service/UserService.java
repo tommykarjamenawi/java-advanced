@@ -50,6 +50,4 @@ public class UserService {
         user.setPassword(passwordEncoder.encode(user.getPassword())); //encrypt password
         return userRepository.save(user); // saves and returns a user
     }
-
-
 }
